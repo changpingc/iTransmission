@@ -7,57 +7,141 @@
 //
 
 #import "ITAppDelegate.h"
+#import "ITSidebarController.h"
+#import "ITNavigationController.h"
+#import "ITTransfersViewController.h"
+#import "ITWebViewController.h"
+#import "ITInfoViewController.h"
+#import "ITExperimentalViewController.h"
 
 @implementation ITAppDelegate
 
 @synthesize window = _window;
+@synthesize statusBarController = _statusBarController;
+@synthesize sidebarController = _sidebarController;
+@synthesize controller = _controller;
+@synthesize persistentTimer = _persistentTimer;
+@synthesize timerEventListeners = _timerEventListeners;
+
++ (id)sharedDelegate
+{
+    return (ITAppDelegate*)[[UIApplication sharedApplication] delegate];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.backgroundColor = [UIColor blackColor];
+    
+    self.timerEventListeners = [[NSMutableArray alloc] init];
+    
+    self.statusBarController = [[ITStatusBarController alloc] initWithNibName:@"ITStatusBarController" bundle:nil];
+    self.window.rootViewController = self.statusBarController;
+    
+    NSMutableArray *viewControllers = [NSMutableArray array];
+    [viewControllers addObject:[[ITNavigationController alloc] initWithRootViewController:[[ITTransfersViewController alloc] init]]];
+//    [viewControllers addObject:[[ITNavigationController alloc] initWithRootViewController:[[ITWebViewController alloc] init]]];
+    [viewControllers addObject:[[ITNavigationController alloc] initWithRootViewController:[[ITInfoViewController alloc] initWithPageName:@"about"]]];
+//    [viewControllers addObject:[[ITExperimentalViewController alloc] init]];
+    
+    self.sidebarController = [[ITSidebarController alloc] init];
+    self.sidebarController.viewControllers = viewControllers;
+    
+    self.statusBarController.contentViewController = self.sidebarController;
+
+    [self performSelectorInBackground:@selector(startTransmission) withObject:nil];
+    [self performSelector:@selector(_test) withObject:nil afterDelay:3.0f];
     [self.window makeKeyAndVisible];
+    
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    if ([url isFileURL]) {
+        NSString *filePath = [url path];
+        return [self.controller openFiles:[NSArray arrayWithObject:filePath] addType:ITAddTypeManual];
+    }
+    else {
+        return NO;
+    }
+}
+
+- (void)_test
+{
+    [self.controller openFiles:[NSArray arrayWithObject:[[NSBundle mainBundle] pathForResource:@"ubuntu-11.10-desktop-i386.iso" ofType:@"torrent"]] addType:ITAddTypeManual];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
-    /*
-     Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-     Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-     */
+    [self stopTimer];
+    [self.controller updateTorrentHistory];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    /*
-     Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-     If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-     */
+    [self.controller updateTorrentHistory];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
-    /*
-     Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-     */
+    [self.controller updateTorrentHistory];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    /*
-     Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-     */
+    [self startTimer];
+    [self.controller updateTorrentHistory];
+}
+
+- (void)registerForTimerEvent:(id)obj
+{
+    [self.timerEventListeners addObject:obj];
+}
+
+- (void)unregisterForTimerEvent:(id)obj
+{
+    [self.timerEventListeners removeObject:obj];
+}
+
+- (void)stopTimer
+{
+    [self.persistentTimer invalidate];
+    self.persistentTimer = nil;
+}
+
+- (void)startTimer
+{
+    self.persistentTimer = [NSTimer timerWithTimeInterval:1.0f target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
+    [[NSRunLoop mainRunLoop] addTimer:self.persistentTimer forMode:NSRunLoopCommonModes];
+}
+
+- (void)startTransmission
+{
+    self.controller = [[ITController alloc] init];
+}
+
+- (void)stopTransmission
+{
+    [self.controller shutdown];
+    self.controller = nil;
+}
+
+- (void)timerFired:(id)sender
+{
+    for (id<ITTimerListener> obj in self.timerEventListeners) {
+        if ([obj respondsToSelector:@selector(timerFiredAfterDelay:)]) {
+            [obj timerFiredAfterDelay:0.0f];
+        }
+        else {
+            LogMessageCompat(@"Object at 0x%X registered for timer event but doens't confirm to protocol!\n", (u_int32_t)obj);
+        }
+    }
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-    /*
-     Called when the application is about to terminate.
-     Save data if appropriate.
-     See also applicationDidEnterBackground:.
-     */
 }
 
 @end
