@@ -12,5 +12,9 @@
 
 + (UIColor*)barBlueColor;
 + (UIColor*)controlBlueColor;
++ (UIColor*)controlGreenColor;
++ (UIColor*)controlRedColor;
++ (UIColor*)controlYellowColor;
++ (UIColor*)controlGreyColor;
 
 @end

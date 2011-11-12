@@ -11,5 +11,5 @@
 @interface ITRoundProgressView : UIControl
 
 @property (nonatomic, assign) CGFloat progress;
-
+@property (nonatomic, strong) UIColor *progressColor;
 @end

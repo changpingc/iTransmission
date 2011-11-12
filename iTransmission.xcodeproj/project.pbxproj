@@ -6,6 +6,21 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		7EF0099D146E87EC00AD1BA5 /* iTransmission IPA */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 7EF0099E146E87EC00AD1BA5 /* Build configuration list for PBXAggregateTarget "iTransmission IPA" */;
+			buildPhases = (
+				7EF009A3146E87F900AD1BA5 /* ShellScript */,
+			);
+			dependencies = (
+				7EF009AA146EA16600AD1BA5 /* PBXTargetDependency */,
+			);
+			name = "iTransmission IPA";
+			productName = "iTransmission IPA";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		7E137C97145284A30030DC13 /* ITTransfersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E137C96145284A30030DC13 /* ITTransfersViewController.m */; };
 		7E137C9A1452860E0030DC13 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E137C991452860E0030DC13 /* QuartzCore.framework */; };
@@ -14,7 +29,6 @@
 		7E137CA3145290900030DC13 /* ITDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E137CA21452908F0030DC13 /* ITDebug.m */; };
 		7E137CA514529B380030DC13 /* sidebar-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E137CA414529B380030DC13 /* sidebar-bg.png */; };
 		7E137CA814529D710030DC13 /* ITSidebarItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E137CA714529D700030DC13 /* ITSidebarItemCell.m */; };
-		7E137CAA14529F3E0030DC13 /* transfers-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E137CA914529F3D0030DC13 /* transfers-icon.png */; };
 		7E137CAD1452A22D0030DC13 /* ITWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E137CAC1452A22C0030DC13 /* ITWebViewController.m */; };
 		7E137CB21452A23F0030DC13 /* SVWebViewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7E137CAF1452A23F0030DC13 /* SVWebViewController.bundle */; };
 		7E137CB31452A23F0030DC13 /* SVWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E137CB11452A23F0030DC13 /* SVWebViewController.m */; };
@@ -80,6 +94,19 @@
 		7E98A44B146A4F6D006ADF77 /* ITActivityInspectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E98A44A146A4F6D006ADF77 /* ITActivityInspectorViewController.m */; };
 		7E98A44E146A4F91006ADF77 /* ITFilesInspectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E98A44D146A4F90006ADF77 /* ITFilesInspectorViewController.m */; };
 		7E98A451146A4FA3006ADF77 /* ITPeersInspectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E98A450146A4FA3006ADF77 /* ITPeersInspectorViewController.m */; };
+		7EF00987146E634300AD1BA5 /* Icon-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EF00981146E634200AD1BA5 /* Icon-iPad.png */; };
+		7EF00988146E634300AD1BA5 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EF00982146E634200AD1BA5 /* Icon-Small-50.png */; };
+		7EF00989146E634300AD1BA5 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EF00983146E634200AD1BA5 /* Icon-Small.png */; };
+		7EF0098A146E634300AD1BA5 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EF00984146E634200AD1BA5 /* Icon-Small@2x.png */; };
+		7EF0098B146E634300AD1BA5 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EF00985146E634200AD1BA5 /* Icon.png */; };
+		7EF0098C146E634300AD1BA5 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EF00986146E634200AD1BA5 /* Icon@2x.png */; };
+		7EF00990146E84C400AD1BA5 /* transfers-icon-original.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EF0098D146E84C200AD1BA5 /* transfers-icon-original.png */; };
+		7EF00991146E84C400AD1BA5 /* transfers-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EF0098E146E84C200AD1BA5 /* transfers-icon.png */; };
+		7EF00992146E84C400AD1BA5 /* transfers-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EF0098F146E84C300AD1BA5 /* transfers-icon@2x.png */; };
+		7EF00994146E84F400AD1BA5 /* about-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EF00993146E84F400AD1BA5 /* about-icon@2x.png */; };
+		7EF0099A146E870C00AD1BA5 /* Icon-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EF00999146E870C00AD1BA5 /* Icon-iPad.png */; };
+		7EF0099C146E872200AD1BA5 /* icon-original-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EF0099B146E872200AD1BA5 /* icon-original-large.png */; };
+		7EF009A5146E8A3900AD1BA5 /* iTunesMetadata.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EF009A4146E8A3900AD1BA5 /* iTunesMetadata.plist */; };
 		7EF855931453E98000AD5DBB /* ITExperimentalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF855921453E98000AD5DBB /* ITExperimentalViewController.m */; };
 		7EF855971453EA2500AD5DBB /* ITColoredProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF855961453EA2400AD5DBB /* ITColoredProgressView.m */; };
 		7EF8559A1453EC3300AD5DBB /* ITProgressGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF855991453EC3300AD5DBB /* ITProgressGradientView.m */; };
@@ -90,6 +117,16 @@
 		7EF855AF1454215000AD5DBB /* ITAddTorrentOptionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EF855AD1454214D00AD5DBB /* ITAddTorrentOptionsViewController.xib */; };
 		7EF855B91454290800AD5DBB /* ITTorrentListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF855B81454290600AD5DBB /* ITTorrentListViewController.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7EF009A9146EA16600AD1BA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E246D3C144F076C008A8586 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E246D44144F076D008A8586;
+			remoteInfo = iTransmission;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		7E137C95145284A30030DC13 /* ITTransfersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITTransfersViewController.h; sourceTree = "<group>"; };
@@ -104,7 +141,6 @@
 		7E137CA414529B380030DC13 /* sidebar-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sidebar-bg.png"; sourceTree = "<group>"; };
 		7E137CA614529D700030DC13 /* ITSidebarItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITSidebarItemCell.h; sourceTree = "<group>"; };
 		7E137CA714529D700030DC13 /* ITSidebarItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITSidebarItemCell.m; sourceTree = "<group>"; };
-		7E137CA914529F3D0030DC13 /* transfers-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transfers-icon.png"; sourceTree = "<group>"; };
 		7E137CAB1452A22B0030DC13 /* ITWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITWebViewController.h; sourceTree = "<group>"; };
 		7E137CAC1452A22C0030DC13 /* ITWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITWebViewController.m; sourceTree = "<group>"; };
 		7E137CAF1452A23F0030DC13 /* SVWebViewController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVWebViewController.bundle; sourceTree = "<group>"; };
@@ -217,6 +253,19 @@
 		7E98A44F146A4FA3006ADF77 /* ITPeersInspectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITPeersInspectorViewController.h; sourceTree = "<group>"; };
 		7E98A450146A4FA3006ADF77 /* ITPeersInspectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITPeersInspectorViewController.m; sourceTree = "<group>"; };
 		7EEA898A146C121A006EF611 /* ITTimerListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITTimerListener.h; sourceTree = "<group>"; };
+		7EF00981146E634200AD1BA5 /* Icon-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-iPad.png"; sourceTree = "<group>"; };
+		7EF00982146E634200AD1BA5 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
+		7EF00983146E634200AD1BA5 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		7EF00984146E634200AD1BA5 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		7EF00985146E634200AD1BA5 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		7EF00986146E634200AD1BA5 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		7EF0098D146E84C200AD1BA5 /* transfers-icon-original.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transfers-icon-original.png"; sourceTree = "<group>"; };
+		7EF0098E146E84C200AD1BA5 /* transfers-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transfers-icon.png"; sourceTree = "<group>"; };
+		7EF0098F146E84C300AD1BA5 /* transfers-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transfers-icon@2x.png"; sourceTree = "<group>"; };
+		7EF00993146E84F400AD1BA5 /* about-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about-icon@2x.png"; sourceTree = "<group>"; };
+		7EF00999146E870C00AD1BA5 /* Icon-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-iPad.png"; sourceTree = "<group>"; };
+		7EF0099B146E872200AD1BA5 /* icon-original-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-original-large.png"; sourceTree = "<group>"; };
+		7EF009A4146E8A3900AD1BA5 /* iTunesMetadata.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = iTunesMetadata.plist; sourceTree = "<group>"; };
 		7EF855911453E98000AD5DBB /* ITExperimentalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITExperimentalViewController.h; sourceTree = "<group>"; };
 		7EF855921453E98000AD5DBB /* ITExperimentalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITExperimentalViewController.m; sourceTree = "<group>"; };
 		7EF855951453EA2400AD5DBB /* ITColoredProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITColoredProgressView.h; sourceTree = "<group>"; };
@@ -335,6 +384,11 @@
 				7E137CD71452E1EA0030DC13 /* transmission */,
 				7E93E015145278B9001DF159 /* 33-cabinet.png */,
 				7E93E016145278B9001DF159 /* 33-cabinet@2x.png */,
+				7EF0098D146E84C200AD1BA5 /* transfers-icon-original.png */,
+				7EF0098E146E84C200AD1BA5 /* transfers-icon.png */,
+				7EF0098F146E84C300AD1BA5 /* transfers-icon@2x.png */,
+				7EF00993146E84F400AD1BA5 /* about-icon@2x.png */,
+				7EF009A4146E8A3900AD1BA5 /* iTunesMetadata.plist */,
 				7E6BCA8A146C1BA80087A8F6 /* debian-6.0.3-i386-CD-1.iso.torrent */,
 				7E246D58144F076D008A8586 /* ITAppDelegate.h */,
 				7E246D59144F076D008A8586 /* ITAppDelegate.m */,
@@ -365,7 +419,6 @@
 				7E137CA414529B380030DC13 /* sidebar-bg.png */,
 				7E137CA614529D700030DC13 /* ITSidebarItemCell.h */,
 				7E137CA714529D700030DC13 /* ITSidebarItemCell.m */,
-				7E137CA914529F3D0030DC13 /* transfers-icon.png */,
 				7E137CAB1452A22B0030DC13 /* ITWebViewController.h */,
 				7E137CAC1452A22C0030DC13 /* ITWebViewController.m */,
 				7E2D991E146BF34300736336 /* NSLogger */,
@@ -418,6 +471,7 @@
 				7EEA898A146C121A006EF611 /* ITTimerListener.h */,
 				7E6BCA9C146C37D30087A8F6 /* UIAlertView+Lazy.h */,
 				7E6BCA9D146C37D50087A8F6 /* UIAlertView+Lazy.m */,
+				7EF00980146E634200AD1BA5 /* Icons */,
 			);
 			path = iTransmission;
 			sourceTree = "<group>";
@@ -475,7 +529,32 @@
 			name = Inspectors;
 			sourceTree = "<group>";
 		};
+		7EF00980146E634200AD1BA5 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				7EF0099B146E872200AD1BA5 /* icon-original-large.png */,
+				7EF00999146E870C00AD1BA5 /* Icon-iPad.png */,
+				7EF00981146E634200AD1BA5 /* Icon-iPad.png */,
+				7EF00982146E634200AD1BA5 /* Icon-Small-50.png */,
+				7EF00983146E634200AD1BA5 /* Icon-Small.png */,
+				7EF00984146E634200AD1BA5 /* Icon-Small@2x.png */,
+				7EF00985146E634200AD1BA5 /* Icon.png */,
+				7EF00986146E634200AD1BA5 /* Icon@2x.png */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7EF009A6146E9F6600AD1BA5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		7E246D44144F076D008A8586 /* iTransmission */ = {
@@ -485,6 +564,7 @@
 				7E246D41144F076D008A8586 /* Sources */,
 				7E246D42144F076D008A8586 /* Frameworks */,
 				7E246D43144F076D008A8586 /* Resources */,
+				7EF009A6146E9F6600AD1BA5 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -516,6 +596,7 @@
 			projectRoot = "";
 			targets = (
 				7E246D44144F076D008A8586 /* iTransmission */,
+				7EF0099D146E87EC00AD1BA5 /* iTransmission IPA */,
 			);
 		};
 /* End PBXProject section */
@@ -531,7 +612,6 @@
 				7E93E017145278B9001DF159 /* 33-cabinet.png in Resources */,
 				7E93E018145278B9001DF159 /* 33-cabinet@2x.png in Resources */,
 				7E137CA514529B380030DC13 /* sidebar-bg.png in Resources */,
-				7E137CAA14529F3E0030DC13 /* transfers-icon.png in Resources */,
 				7E137CB21452A23F0030DC13 /* SVWebViewController.bundle in Resources */,
 				7E137CB71452A62D0030DC13 /* browser-icon.png in Resources */,
 				7E137CD91452E3090030DC13 /* Info in Resources */,
@@ -545,10 +625,39 @@
 				7E667907145CF37A00C1E585 /* SVSegmentedControl.bundle in Resources */,
 				7E6BCA8B146C1BA80087A8F6 /* debian-6.0.3-i386-CD-1.iso.torrent in Resources */,
 				7E6BCA8D146C23260087A8F6 /* ITFileInspectorCell.xib in Resources */,
+				7EF00987146E634300AD1BA5 /* Icon-iPad.png in Resources */,
+				7EF00988146E634300AD1BA5 /* Icon-Small-50.png in Resources */,
+				7EF00989146E634300AD1BA5 /* Icon-Small.png in Resources */,
+				7EF0098A146E634300AD1BA5 /* Icon-Small@2x.png in Resources */,
+				7EF0098B146E634300AD1BA5 /* Icon.png in Resources */,
+				7EF0098C146E634300AD1BA5 /* Icon@2x.png in Resources */,
+				7EF00990146E84C400AD1BA5 /* transfers-icon-original.png in Resources */,
+				7EF00991146E84C400AD1BA5 /* transfers-icon.png in Resources */,
+				7EF00992146E84C400AD1BA5 /* transfers-icon@2x.png in Resources */,
+				7EF00994146E84F400AD1BA5 /* about-icon@2x.png in Resources */,
+				7EF0099A146E870C00AD1BA5 /* Icon-iPad.png in Resources */,
+				7EF0099C146E872200AD1BA5 /* icon-original-large.png in Resources */,
+				7EF009A5146E8A3900AD1BA5 /* iTunesMetadata.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7EF009A3146E87F900AD1BA5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ $BUILD_STYLE != \"AdHoc_Distribution\" ]; then\nexit\nfi\n\n# remove previous files\n/bin/rm -rf $CONFIGURATION_BUILD_DIR/Payload\n/bin/rm -rf $CONFIGURATION_BUILD_DIR/iTunesArtwork\n\n# set build number\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" iTransmission/iTransmission-Info.plist)\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" iTransmission/iTransmission-Info.plist\n/bin/cp iTransmission/iTransmission-Info.plist $CONFIGURATION_BUILD_DIR/iTransmission.app\n\n# compress application.\n/bin/mkdir -p $CONFIGURATION_BUILD_DIR/Payload\n/bin/cp -R $CONFIGURATION_BUILD_DIR/iTransmission.app $CONFIGURATION_BUILD_DIR/Payload\n/bin/cp iTransmission/Icons/icon-original-large.png $CONFIGURATION_BUILD_DIR/iTunesArtwork\n/bin/cp iTransmission/iTunesMetadata.plist $CONFIGURATION_BUILD_DIR/iTunesMetadata.plist\n/usr/libexec/PlistBuddy -c \"Set :bundleVersion $buildNumber\" iTransmission/iTransmission-Info.plist\n\ncd $CONFIGURATION_BUILD_DIR\nDATE=\"`/bin/date +'%Y%m%d'`\"\n/usr/bin/zip -r iTransmission_`/bin/date +'%Y%m%d'`.ipa Payload iTunesArtwork iTunesMetadata.plist\nopen $CONFIGURATION_BUILD_DIR -a Finder";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7E246D41144F076D008A8586 /* Sources */ = {
@@ -613,6 +722,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7EF009AA146EA16600AD1BA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E246D44144F076D008A8586 /* iTransmission */;
+			targetProxy = 7EF009A9146EA16600AD1BA5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7E246D52144F076D008A8586 /* InfoPlist.strings */ = {
@@ -680,7 +797,7 @@
 				GCC_PREFIX_HEADER = "iTransmission/iTransmission-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/libraries/$(CURRENT_ARCH)/include";
 				INFOPLIST_FILE = "iTransmission/iTransmission-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/libraries/$(CURRENT_ARCH)/lib";
 				OTHER_LDFLAGS = (
 					"-ltransmission",
@@ -706,7 +823,7 @@
 				GCC_PREFIX_HEADER = "iTransmission/iTransmission-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/libraries/$(CURRENT_ARCH)/include";
 				INFOPLIST_FILE = "iTransmission/iTransmission-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/libraries/$(CURRENT_ARCH)/lib";
 				OTHER_LDFLAGS = (
 					"-ltransmission",
@@ -722,6 +839,20 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		7EF0099F146E87EC00AD1BA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7EF009A0146E87EC00AD1BA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -745,6 +876,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		7EF0099E146E87EC00AD1BA5 /* Build configuration list for PBXAggregateTarget "iTransmission IPA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7EF0099F146E87EC00AD1BA5 /* Debug */,
+				7EF009A0146E87EC00AD1BA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

@@ -11,6 +11,7 @@
 
 @implementation ITRoundProgressView
 
+@synthesize progressColor = _progressColor;
 @synthesize progress = _progress;
 
 - (id)initWithFrame:(CGRect)frame
@@ -18,6 +19,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
+        self.progressColor = [UIColor controlBlueColor];
         self.opaque = NO;
     }
     return self;
@@ -28,6 +30,7 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
+        self.progressColor = [UIColor controlBlueColor];
         self.opaque = NO;
     }
     return self;
@@ -45,6 +48,12 @@
     [self setNeedsDisplay];
 }
 
+- (void)setProgressColor:(UIColor *)progressColor
+{
+    _progressColor = progressColor;
+    [self setNeedsDisplay];
+}
+
 - (void)drawRect:(CGRect)rect {
     
     CGRect allRect = self.bounds;
@@ -53,7 +62,7 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     CGFloat red, green, blue, alpha;
-    [[UIColor controlBlueColor] getRed:&red green:&green blue:&blue alpha:&alpha];
+    [self.progressColor getRed:&red green:&green blue:&blue alpha:&alpha];
     
     // Draw background
     CGContextSetRGBStrokeColor(context, red, green, blue, 1.0f);
@@ -72,6 +81,8 @@
     CGContextAddArc(context, center.x, center.y, radius, startAngle, endAngle, 0);
     CGContextClosePath(context);
     CGContextFillPath(context);
+    
+//    [[NSString stringWithFormat:@"%d", (int)self.progress] drawAtPoint:CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect)) forWidth:3.0f withFont:[UIFont boldSystemFontOfSize:8] fontSize:8 lineBreakMode:UILineBreakModeClip baselineAdjustment:UIBaselineAdjustmentNone];
 }
 
 @end

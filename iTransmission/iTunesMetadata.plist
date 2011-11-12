@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>appleId</key>
+	<string>hfelsh@gmail.com</string>
+	<key>artistName</key>
+	<string>Mike Chen</string>
+	<key>bundleVersion</key>
+	<string>2.00</string>
+	<key>itemName</key>
+	<string>iTransmission</string>
+	<key>copyright</key>
+	<string>© 2011 Mike Chen</string>
+	<key>purchaseDate</key>
+	<date>2011-07-13T01:01:01Z</date>
+	<key>releaseDate</key>
+	<string>2011-07-13T01:01:01Z</string>
+	<key>fileExtension</key>
+	<string>.app</string>
+	<key>genre</key>
+	<string>Utilities</string>
+	<key>genreId</key>
+	<integer>6002</integer>
+	<key>kind</key>
+	<string>software</string>
+	<key>playlistArtistName</key>
+	<string>Mike Chen</string>
+	<key>playlistName</key>
+	<string>iTransmission</string>
+	<key>softwareIconNeedsShine</key>
+	<true/>
+	<key>softwareVersionBundleId</key>
+	<string>li.ccp.iTransmission</string>
+</dict>
+</plist>

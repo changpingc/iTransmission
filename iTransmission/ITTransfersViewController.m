@@ -17,6 +17,7 @@
 #import "ITShadowView.h"
 #import "ITInspectorCollectionViewController.h"
 #import "ITAppDelegate.h"
+#import "UIColor+Style.h"
 
 @implementation ITTransfersViewController
 @synthesize sidebarItem = _sidebarItem;
@@ -216,6 +217,17 @@
     if ([[cell.roundProgressView allTargets] containsObject:self] == NO) {
         [cell.roundProgressView addTarget:self action:@selector(progressControlTapped:) forControlEvents:UIControlEventTouchUpInside];
     }
+    
+//    if ([torrent isActive]) {
+//        if ([torrent isChecking]) 
+//            cell.roundProgressView.progressColor = [UIColor controlYellowColor];
+//        else if ([torrent isSeeding])
+//            cell.roundProgressView.progressColor = [UIColor controlGreenColor];
+//        else 
+//            cell.roundProgressView.progressColor = [UIColor controlBlueColor];
+//    }
+//    else 
+//        cell.roundProgressView.progressColor = [UIColor controlGreyColor];
 }
 
 - (void)progressControlTapped:(id)sender

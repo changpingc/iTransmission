@@ -70,7 +70,8 @@
 
 - (void)_test
 {
-    [self.controller openFiles:[NSArray arrayWithObject:[[NSBundle mainBundle] pathForResource:@"ubuntu-11.10-desktop-i386.iso" ofType:@"torrent"]] addType:ITAddTypeManual];
+//    [(id)self.statusBarController.contentViewController slideContainerViewToRightAnimated:YES];
+//    [self.controller openFiles:[NSArray arrayWithObject:[[NSBundle mainBundle] pathForResource:@"ubuntu-11.10-desktop-i386.iso" ofType:@"torrent"]] addType:ITAddTypeManual];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
