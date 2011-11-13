@@ -63,8 +63,10 @@
     self.tableView.dataSource = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [UIColor clearColor];
-        
-    [self.tableView registerNib:[UINib nibWithNibName:@"ITTransferCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:[ITTransferCell identifier]];
+    
+    if ([self.tableView respondsToSelector:@selector(registerNib:forCellReuseIdentifier:)]) {
+        [self.tableView registerNib:[UINib nibWithNibName:@"ITTransferCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:[ITTransferCell identifier]];
+    }
     [self.view addSubview:self.tableView];
 }
 
@@ -171,8 +173,9 @@
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ITTransferCell *cell = (ITTransferCell*)[tableView dequeueReusableCellWithIdentifier:[ITTransferCell identifier]];
-    assert(cell);
-    
+    if (! [self.tableView respondsToSelector:@selector(registerNib:forCellReuseIdentifier:)]) {
+        if (cell == nil) cell = [[[NSBundle mainBundle] loadNibNamed:@"ITTransferCell" owner:nil options:nil] objectAtIndex:0];
+    }
     ITTorrent *torrent = [self.displayedTorrents objectAtIndex:indexPath.row];
     [self fillInCell:cell withTorrent:torrent];
     

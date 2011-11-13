@@ -47,7 +47,9 @@
     [self.view addSubview:self.tableView];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    [self.tableView registerNib:[UINib nibWithNibName:@"ITFileInspectorCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"ITFileInspectorCell"];
+    if ([self.tableView respondsToSelector:@selector(registerNib:forCellReuseIdentifier:)]) {
+        [self.tableView registerNib:[UINib nibWithNibName:@"ITFileInspectorCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"ITFileInspectorCell"];
+    }
 }
 
 - (void)registerNotifications
@@ -104,6 +106,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ITFileInspectorCell *cell = (ITFileInspectorCell*)[tableView dequeueReusableCellWithIdentifier:@"ITFileInspectorCell"];
+    if (! [self.tableView respondsToSelector:@selector(registerNib:forCellReuseIdentifier:)]) {
+        cell = (ITFileInspectorCell*)[[[NSBundle mainBundle] loadNibNamed:@"ITFileInspectorCell" owner:nil options:nil] objectAtIndex:0];
+    }
     assert(cell);
     
     if ([[cell.checkmarkControl allTargets] containsObject:self] == NO) {

@@ -36,8 +36,9 @@
         self.rootViewController = rootViewController;
         self.navigationBar.tintColor = [UIColor barBlueColor];
         UIImage *barBackground = [UIImage imageNamed:@"bar-bg.png"];
-        [self.navigationBar setBackgroundImage:barBackground forBarMetrics:UIBarMetricsDefault];
-
+        if ([self.navigationBar respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)]) {
+            [self.navigationBar setBackgroundImage:barBackground forBarMetrics:UIBarMetricsDefault];
+        }
     }
     return self;
 }

@@ -62,7 +62,16 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     CGFloat red, green, blue, alpha;
-    [self.progressColor getRed:&red green:&green blue:&blue alpha:&alpha];
+    if ([self.progressColor respondsToSelector:@selector(getRed:green:blue:alpha:)]) {
+        [self.progressColor getRed:&red green:&green blue:&blue alpha:&alpha];
+    }
+    else {
+        const CGFloat* components = CGColorGetComponents(self.progressColor.CGColor);
+        red = components[0];
+        green = components[1];
+        blue = components[2];
+        alpha = CGColorGetAlpha(self.progressColor.CGColor);
+    }
     
     // Draw background
     CGContextSetRGBStrokeColor(context, red, green, blue, 1.0f);
