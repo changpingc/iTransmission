@@ -213,5 +213,6 @@
 - (tr_torrent *) torrentStruct;
 
 - (void)startIfAllowed;
+- (void)_stopInBackground;
 
 @end

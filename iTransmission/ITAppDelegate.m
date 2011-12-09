@@ -11,8 +11,10 @@
 #import "ITNavigationController.h"
 #import "ITTransfersViewController.h"
 #import "ITWebViewController.h"
+#import "ITPreferencePanelViewController.h"
 #import "ITInfoViewController.h"
 #import "ITExperimentalViewController.h"
+#import "ITPrefViewController.h"
 
 @implementation ITAppDelegate
 
@@ -22,6 +24,8 @@
 @synthesize controller = _controller;
 @synthesize persistentTimer = _persistentTimer;
 @synthesize timerEventListeners = _timerEventListeners;
+@synthesize networkSwitcher = _networkSwitcher;
+
 
 + (id)sharedDelegate
 {
@@ -30,6 +34,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    NSString *webInterfacePath = [[NSBundle mainBundle] pathForResource:@"web" ofType:nil];
+    setenv("TRANSMISSION_WEB_HOME", [webInterfacePath UTF8String], 1);
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor blackColor];
@@ -42,16 +49,19 @@
     NSMutableArray *viewControllers = [NSMutableArray array];
     [viewControllers addObject:[[ITNavigationController alloc] initWithRootViewController:[[ITTransfersViewController alloc] init]]];
 //    [viewControllers addObject:[[ITNavigationController alloc] initWithRootViewController:[[ITWebViewController alloc] init]]];
-    [viewControllers addObject:[[ITNavigationController alloc] initWithRootViewController:[[ITInfoViewController alloc] initWithPageName:@"about"]]];
 //    [viewControllers addObject:[[ITExperimentalViewController alloc] init]];
-    
+    [viewControllers addObject:[[ITNavigationController alloc] initWithRootViewController:[[ITPrefViewController alloc] init]]];
+    [viewControllers addObject:[[ITNavigationController alloc] initWithRootViewController:[[ITInfoViewController alloc] initWithPageName:@"about"]]];
+
     self.sidebarController = [[ITSidebarController alloc] init];
     self.sidebarController.viewControllers = viewControllers;
     
     self.statusBarController.contentViewController = self.sidebarController;
 
+    self.networkSwitcher = [[ITNetworkSwitcher alloc] init];
+    
     [self performSelectorInBackground:@selector(startTransmission) withObject:nil];
-    [self performSelector:@selector(_test) withObject:nil afterDelay:3.0f];
+//    [self performSelector:@selector(_test) withObject:nil afterDelay:3.0f];
     [self.window makeKeyAndVisible];
     
     return YES;
@@ -70,7 +80,7 @@
 
 - (void)_test
 {
-//    [(id)self.statusBarController.contentViewController slideContainerViewToRightAnimated:YES];
+    [(id)self.statusBarController.contentViewController slideContainerViewToRightAnimated:YES];
 //    [self.controller openFiles:[NSArray arrayWithObject:[[NSBundle mainBundle] pathForResource:@"ubuntu-11.10-desktop-i386.iso" ofType:@"torrent"]] addType:ITAddTypeManual];
 }
 
@@ -143,6 +153,7 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
+    self.networkSwitcher = nil;
 }
 
 @end

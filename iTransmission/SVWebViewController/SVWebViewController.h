@@ -4,30 +4,17 @@
 //  Created by Sam Vermette on 08.11.10.
 //  Copyright 2010 Sam Vermette. All rights reserved.
 //
+//  https://github.com/samvermette/SVWebViewController
 
 #import <MessageUI/MessageUI.h>
 
+#import "SVModalWebViewController.h"
 
-@interface SVWebViewController : UIViewController <UIWebViewDelegate, UIActionSheetDelegate, MFMailComposeViewControllerDelegate> {
-	UIWebView *rWebView;
-    UINavigationBar *navBar;
-    UIToolbar *toolbar;
-    
-	// iPhone UI
-	UINavigationItem *navItem;
-	UIBarButtonItem *backBarButton, *forwardBarButton, *refreshStopBarButton, *actionBarButton;
-	
-	// iPad UI
-	UIButton *backButton, *forwardButton, *refreshStopButton, *actionButton;
-	UILabel *titleLabel;
-	CGFloat titleLeftOffset;
-	
-	BOOL deviceIsTablet, stoppedLoading;
-}
+@interface SVWebViewController : UIViewController <UIWebViewDelegate, UIActionSheetDelegate, MFMailComposeViewControllerDelegate>
 
-@property (nonatomic, retain) UIWebView *webView;
-@property (nonatomic, retain) NSString *urlString;
+- (id)initWithAddress:(NSString*)urlString;
+- (id)initWithURL:(NSURL*)URL;
 
-- (SVWebViewController*)initWithAddress:(NSString*)string;
+@property (nonatomic, assign) SVWebViewControllerAvailableActions availableActions;
 
 @end

@@ -31,7 +31,7 @@
 		7E137CA814529D710030DC13 /* ITSidebarItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E137CA714529D700030DC13 /* ITSidebarItemCell.m */; };
 		7E137CAD1452A22D0030DC13 /* ITWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E137CAC1452A22C0030DC13 /* ITWebViewController.m */; };
 		7E137CB21452A23F0030DC13 /* SVWebViewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7E137CAF1452A23F0030DC13 /* SVWebViewController.bundle */; };
-		7E137CB31452A23F0030DC13 /* SVWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E137CB11452A23F0030DC13 /* SVWebViewController.m */; };
+		7E137CB31452A23F0030DC13 /* SVWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E137CB11452A23F0030DC13 /* SVWebViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7E137CB51452A3050030DC13 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E137CB41452A3050030DC13 /* MessageUI.framework */; };
 		7E137CB71452A62D0030DC13 /* browser-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E137CB61452A62C0030DC13 /* browser-icon.png */; };
 		7E137CBA1452B1A60030DC13 /* ITRoundCornerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E137CB91452B1A60030DC13 /* ITRoundCornerView.m */; };
@@ -55,6 +55,12 @@
 		7E14E9BA14516351003520DA /* ITSidebarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E14E9B914516351003520DA /* ITSidebarController.m */; };
 		7E14E9C0145163E1003520DA /* ITSidebar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E14E9BF145163E1003520DA /* ITSidebar.m */; };
 		7E14E9C214516408003520DA /* ITSidebar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E14E9C114516408003520DA /* ITSidebar.xib */; };
+		7E217D60148E1F2600C7BD50 /* ITPreferencePanelViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E217D5E148E1F2600C7BD50 /* ITPreferencePanelViewController.h */; };
+		7E217D64148E238000C7BD50 /* ITAppPreferencePanelViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E217D62148E238000C7BD50 /* ITAppPreferencePanelViewController.h */; };
+		7E217D67148E27EF00C7BD50 /* ITPrefViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E217D66148E27EF00C7BD50 /* ITPrefViewController.xib */; };
+		7E217D6A148E282B00C7BD50 /* ITPrefViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E217D68148E282A00C7BD50 /* ITPrefViewController.h */; };
+		7E217D6B148E282B00C7BD50 /* ITPrefViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E217D69148E282A00C7BD50 /* ITPrefViewController.m */; };
+		7E217D71148E313300C7BD50 /* web in Resources */ = {isa = PBXBuildFile; fileRef = 7E217D70148E313300C7BD50 /* web */; };
 		7E246D4A144F076D008A8586 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E246D49144F076D008A8586 /* UIKit.framework */; };
 		7E246D4C144F076D008A8586 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E246D4B144F076D008A8586 /* Foundation.framework */; };
 		7E246D4E144F076D008A8586 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E246D4D144F076D008A8586 /* CoreGraphics.framework */; };
@@ -66,6 +72,8 @@
 		7E2D9922146BF34300736336 /* LoggerClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2D9920146BF34300736336 /* LoggerClient.m */; };
 		7E2D9929146BF63400736336 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E2D9928146BF63400736336 /* CFNetwork.framework */; };
 		7E2D992B146BF66000736336 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E2D992A146BF66000736336 /* SystemConfiguration.framework */; };
+		7E321F9F148E1B22001C8E2A /* SVModalWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E321F9D148E1B22001C8E2A /* SVModalWebViewController.h */; };
+		7E321FA0148E1B22001C8E2A /* SVModalWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E321F9E148E1B22001C8E2A /* SVModalWebViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7E3F616F14580BC300EC26F7 /* ITShadowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3F616E14580BC300EC26F7 /* ITShadowView.m */; };
 		7E61E9DC14559A770056B2EA /* ITInspectorBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E61E9DB14559A770056B2EA /* ITInspectorBaseViewController.m */; };
 		7E61E9E61455A6470056B2EA /* ITTransferCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E61E9E51455A6460056B2EA /* ITTransferCell.xib */; };
@@ -86,6 +94,11 @@
 		7E6BCA8D146C23260087A8F6 /* ITFileInspectorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E6BCA8C146C23260087A8F6 /* ITFileInspectorCell.xib */; };
 		7E6BCA90146C233D0087A8F6 /* ITFileInspectorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E6BCA8F146C233D0087A8F6 /* ITFileInspectorCell.m */; };
 		7E6BCA9E146C37D70087A8F6 /* UIAlertView+Lazy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E6BCA9D146C37D50087A8F6 /* UIAlertView+Lazy.m */; };
+		7E856DA314919F4C00F9E912 /* ITNetworkSwitcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E856DA114919F4C00F9E912 /* ITNetworkSwitcher.h */; };
+		7E856DA414919F4C00F9E912 /* ITNetworkSwitcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E856DA214919F4C00F9E912 /* ITNetworkSwitcher.m */; };
+		7E856DA81491A00800F9E912 /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E856DA61491A00800F9E912 /* Reachability.h */; };
+		7E856DA91491A00800F9E912 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E856DA71491A00800F9E912 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7E856DAB1491A64A00F9E912 /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E856DAA1491A64A00F9E912 /* Defaults.plist */; };
 		7E93E014145272F5001DF159 /* ITNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E93E013145272F5001DF159 /* ITNavigationController.m */; };
 		7E93E017145278B9001DF159 /* 33-cabinet.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E93E015145278B9001DF159 /* 33-cabinet.png */; };
 		7E93E018145278B9001DF159 /* 33-cabinet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E93E016145278B9001DF159 /* 33-cabinet@2x.png */; };
@@ -186,6 +199,14 @@
 		7E14E9BE145163E1003520DA /* ITSidebar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITSidebar.h; sourceTree = "<group>"; };
 		7E14E9BF145163E1003520DA /* ITSidebar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITSidebar.m; sourceTree = "<group>"; };
 		7E14E9C114516408003520DA /* ITSidebar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ITSidebar.xib; sourceTree = "<group>"; };
+		7E217D5E148E1F2600C7BD50 /* ITPreferencePanelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITPreferencePanelViewController.h; sourceTree = "<group>"; };
+		7E217D5F148E1F2600C7BD50 /* ITPreferencePanelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITPreferencePanelViewController.m; sourceTree = "<group>"; };
+		7E217D62148E238000C7BD50 /* ITAppPreferencePanelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITAppPreferencePanelViewController.h; sourceTree = "<group>"; };
+		7E217D63148E238000C7BD50 /* ITAppPreferencePanelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITAppPreferencePanelViewController.m; sourceTree = "<group>"; };
+		7E217D66148E27EF00C7BD50 /* ITPrefViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ITPrefViewController.xib; sourceTree = "<group>"; };
+		7E217D68148E282A00C7BD50 /* ITPrefViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITPrefViewController.h; sourceTree = "<group>"; };
+		7E217D69148E282A00C7BD50 /* ITPrefViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITPrefViewController.m; sourceTree = "<group>"; };
+		7E217D70148E313300C7BD50 /* web */ = {isa = PBXFileReference; lastKnownFileType = folder; path = web; sourceTree = "<group>"; };
 		7E246D45144F076D008A8586 /* iTransmission.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTransmission.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E246D49144F076D008A8586 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7E246D4B144F076D008A8586 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -204,6 +225,8 @@
 		7E2D9921146BF34300736336 /* LoggerCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = LoggerCommon.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		7E2D9928146BF63400736336 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		7E2D992A146BF66000736336 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		7E321F9D148E1B22001C8E2A /* SVModalWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVModalWebViewController.h; sourceTree = "<group>"; };
+		7E321F9E148E1B22001C8E2A /* SVModalWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVModalWebViewController.m; sourceTree = "<group>"; };
 		7E3F616D14580BC300EC26F7 /* ITShadowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITShadowView.h; sourceTree = "<group>"; };
 		7E3F616E14580BC300EC26F7 /* ITShadowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITShadowView.m; sourceTree = "<group>"; };
 		7E61E9DA14559A770056B2EA /* ITInspectorBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITInspectorBaseViewController.h; sourceTree = "<group>"; };
@@ -237,6 +260,11 @@
 		7E6BCA8F146C233D0087A8F6 /* ITFileInspectorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITFileInspectorCell.m; sourceTree = "<group>"; };
 		7E6BCA9C146C37D30087A8F6 /* UIAlertView+Lazy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Lazy.h"; sourceTree = "<group>"; };
 		7E6BCA9D146C37D50087A8F6 /* UIAlertView+Lazy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Lazy.m"; sourceTree = "<group>"; };
+		7E856DA114919F4C00F9E912 /* ITNetworkSwitcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITNetworkSwitcher.h; sourceTree = "<group>"; };
+		7E856DA214919F4C00F9E912 /* ITNetworkSwitcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITNetworkSwitcher.m; sourceTree = "<group>"; };
+		7E856DA61491A00800F9E912 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		7E856DA71491A00800F9E912 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		7E856DAA1491A64A00F9E912 /* Defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Defaults.plist; sourceTree = "<group>"; };
 		7E93E012145272F5001DF159 /* ITNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITNavigationController.h; sourceTree = "<group>"; };
 		7E93E013145272F5001DF159 /* ITNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITNavigationController.m; sourceTree = "<group>"; };
 		7E93E015145278B9001DF159 /* 33-cabinet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "33-cabinet.png"; sourceTree = "<group>"; };
@@ -258,7 +286,7 @@
 		7EF00983146E634200AD1BA5 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
 		7EF00984146E634200AD1BA5 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
 		7EF00985146E634200AD1BA5 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		7EF00986146E634200AD1BA5 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		7EF00986146E634200AD1BA5 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Icons/Icon@2x.png"; sourceTree = "<group>"; };
 		7EF0098D146E84C200AD1BA5 /* transfers-icon-original.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transfers-icon-original.png"; sourceTree = "<group>"; };
 		7EF0098E146E84C200AD1BA5 /* transfers-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transfers-icon.png"; sourceTree = "<group>"; };
 		7EF0098F146E84C300AD1BA5 /* transfers-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transfers-icon@2x.png"; sourceTree = "<group>"; };
@@ -307,6 +335,8 @@
 		7E137CAE1452A23F0030DC13 /* SVWebViewController */ = {
 			isa = PBXGroup;
 			children = (
+				7E321F9D148E1B22001C8E2A /* SVModalWebViewController.h */,
+				7E321F9E148E1B22001C8E2A /* SVModalWebViewController.m */,
 				7E137CAF1452A23F0030DC13 /* SVWebViewController.bundle */,
 				7E137CB01452A23F0030DC13 /* SVWebViewController.h */,
 				7E137CB11452A23F0030DC13 /* SVWebViewController.m */,
@@ -339,8 +369,21 @@
 				7E137D0D145311830030DC13 /* ITFileListNode.h */,
 				7E137D0E145311840030DC13 /* ITFileListNode.m */,
 				7E137D12145314650030DC13 /* NSStates.h */,
+				7E856DA114919F4C00F9E912 /* ITNetworkSwitcher.h */,
+				7E856DA214919F4C00F9E912 /* ITNetworkSwitcher.m */,
 			);
 			name = transmission;
+			sourceTree = "<group>";
+		};
+		7E217D58148E1EDE00C7BD50 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				7E217D5E148E1F2600C7BD50 /* ITPreferencePanelViewController.h */,
+				7E217D5F148E1F2600C7BD50 /* ITPreferencePanelViewController.m */,
+				7E217D62148E238000C7BD50 /* ITAppPreferencePanelViewController.h */,
+				7E217D63148E238000C7BD50 /* ITAppPreferencePanelViewController.m */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		7E246D3A144F076C008A8586 = {
@@ -378,6 +421,8 @@
 		7E246D4F144F076D008A8586 /* iTransmission */ = {
 			isa = PBXGroup;
 			children = (
+				7E856DAA1491A64A00F9E912 /* Defaults.plist */,
+				7E217D58148E1EDE00C7BD50 /* Settings */,
 				7E137CFD1453098C0030DC13 /* NSArray+iTransmissionUtility.h */,
 				7E137CFE1453098E0030DC13 /* NSArray+iTransmissionUtility.m */,
 				7E137CD81452E3090030DC13 /* Info */,
@@ -385,6 +430,8 @@
 				7E93E015145278B9001DF159 /* 33-cabinet.png */,
 				7E93E016145278B9001DF159 /* 33-cabinet@2x.png */,
 				7EF0098D146E84C200AD1BA5 /* transfers-icon-original.png */,
+				7E856DA61491A00800F9E912 /* Reachability.h */,
+				7E856DA71491A00800F9E912 /* Reachability.m */,
 				7EF0098E146E84C200AD1BA5 /* transfers-icon.png */,
 				7EF0098F146E84C300AD1BA5 /* transfers-icon@2x.png */,
 				7EF00993146E84F400AD1BA5 /* about-icon@2x.png */,
@@ -471,7 +518,12 @@
 				7EEA898A146C121A006EF611 /* ITTimerListener.h */,
 				7E6BCA9C146C37D30087A8F6 /* UIAlertView+Lazy.h */,
 				7E6BCA9D146C37D50087A8F6 /* UIAlertView+Lazy.m */,
+				7E217D70148E313300C7BD50 /* web */,
 				7EF00980146E634200AD1BA5 /* Icons */,
+				7E217D68148E282A00C7BD50 /* ITPrefViewController.h */,
+				7E217D69148E282A00C7BD50 /* ITPrefViewController.m */,
+				7EF00986146E634200AD1BA5 /* Icon@2x.png */,
+				7E217D66148E27EF00C7BD50 /* ITPrefViewController.xib */,
 			);
 			path = iTransmission;
 			sourceTree = "<group>";
@@ -539,7 +591,6 @@
 				7EF00983146E634200AD1BA5 /* Icon-Small.png */,
 				7EF00984146E634200AD1BA5 /* Icon-Small@2x.png */,
 				7EF00985146E634200AD1BA5 /* Icon.png */,
-				7EF00986146E634200AD1BA5 /* Icon@2x.png */,
 			);
 			path = Icons;
 			sourceTree = "<group>";
@@ -551,6 +602,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E321F9F148E1B22001C8E2A /* SVModalWebViewController.h in Headers */,
+				7E217D60148E1F2600C7BD50 /* ITPreferencePanelViewController.h in Headers */,
+				7E217D64148E238000C7BD50 /* ITAppPreferencePanelViewController.h in Headers */,
+				7E217D6A148E282B00C7BD50 /* ITPrefViewController.h in Headers */,
+				7E856DA314919F4C00F9E912 /* ITNetworkSwitcher.h in Headers */,
+				7E856DA81491A00800F9E912 /* Reachability.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -638,6 +695,9 @@
 				7EF0099A146E870C00AD1BA5 /* Icon-iPad.png in Resources */,
 				7EF0099C146E872200AD1BA5 /* icon-original-large.png in Resources */,
 				7EF009A5146E8A3900AD1BA5 /* iTunesMetadata.plist in Resources */,
+				7E217D67148E27EF00C7BD50 /* ITPrefViewController.xib in Resources */,
+				7E217D71148E313300C7BD50 /* web in Resources */,
+				7E856DAB1491A64A00F9E912 /* Defaults.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -655,7 +715,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ $BUILD_STYLE != \"AdHoc_Distribution\" ]; then\nexit\nfi\n\n# remove previous files\n/bin/rm -rf $CONFIGURATION_BUILD_DIR/Payload\n/bin/rm -rf $CONFIGURATION_BUILD_DIR/iTunesArtwork\n\n# set build number\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" iTransmission/iTransmission-Info.plist)\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" iTransmission/iTransmission-Info.plist\n/bin/cp iTransmission/iTransmission-Info.plist $CONFIGURATION_BUILD_DIR/iTransmission.app\n\n# compress application.\n/bin/mkdir -p $CONFIGURATION_BUILD_DIR/Payload\n/bin/cp -R $CONFIGURATION_BUILD_DIR/iTransmission.app $CONFIGURATION_BUILD_DIR/Payload\n/bin/cp iTransmission/Icons/icon-original-large.png $CONFIGURATION_BUILD_DIR/iTunesArtwork\n/bin/cp iTransmission/iTunesMetadata.plist $CONFIGURATION_BUILD_DIR/iTunesMetadata.plist\n/usr/libexec/PlistBuddy -c \"Set :bundleVersion $buildNumber\" iTransmission/iTransmission-Info.plist\n\ncd $CONFIGURATION_BUILD_DIR\nDATE=\"`/bin/date +'%Y%m%d'`\"\n/usr/bin/zip -r iTransmission_b${buildNumber}.ipa Payload iTunesArtwork iTunesMetadata.plist\nopen $CONFIGURATION_BUILD_DIR -a Finder";
+			shellScript = "if [ $BUILD_STYLE != \"AdHoc_Distribution\" ]; then\nexit\nfi\n\n# remove previous files\n/bin/rm -rf $CONFIGURATION_BUILD_DIR/Payload\n/bin/rm -rf $CONFIGURATION_BUILD_DIR/iTunesArtwork\n\n/bin/mkdir -p $CONFIGURATION_BUILD_DIR/Payload\n/bin/cp -R $CONFIGURATION_BUILD_DIR/iTransmission.app $CONFIGURATION_BUILD_DIR/Payload\n/bin/cp iTransmission/Icons/icon-original-large.png $CONFIGURATION_BUILD_DIR/iTunesArtwork\n/bin/cp iTransmission/iTunesMetadata.plist $CONFIGURATION_BUILD_DIR/iTunesMetadata.plist\nrm $CONFIGURATION_BUILD_DIR/Payload/iTransmission.app/iTunesMetadata.plist\n\n# set build number\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" iTransmission/iTransmission-Info.plist)\nbuildNumber=$(($buildNumber + 1))\n\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" iTransmission/iTransmission-Info.plist\n/usr/libexec/PlistBuddy -c \"Set :CFBundleShortVersionString 2.$buildNumber\" iTransmission/iTransmission-Info.plist\ncp -Rf iTransmission/iTransmission-Info.plist $CONFIGURATION_BUILD_DIR/Payload/iTransmission.app\n\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" iTransmission/iTransmission-Info.plist\n/usr/libexec/PlistBuddy -c \"Set :CFBundleShortVersionString 2.$buildNumber\" iTransmission/iTransmission-Info.plist\ncp -Rf iTransmission/iTransmission-Info.plist $CONFIGURATION_BUILD_DIR/Payload/iTransmission.app\n\ncd $CONFIGURATION_BUILD_DIR\nDATE=\"`/bin/date +'%Y%m%d'`\"\n/usr/libexec/PlistBuddy -c \"Set :bundleVersion 2.$buildNumber\" iTunesMetadata.plist\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" $CONFIGURATION_BUILD_DIR/Payload/iTransmission.app/Info.plist\n/usr/libexec/PlistBuddy -c \"Set :CFBundleShortVersionString 2.$buildNumber\" $CONFIGURATION_BUILD_DIR/Payload/iTransmission.app/Info.plist\n/usr/bin/zip -r iTransmission_b${buildNumber}.ipa Payload iTunesArtwork iTunesMetadata.plist\nopen $CONFIGURATION_BUILD_DIR -a Finder";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -718,6 +778,10 @@
 				7E2D9922146BF34300736336 /* LoggerClient.m in Sources */,
 				7E6BCA90146C233D0087A8F6 /* ITFileInspectorCell.m in Sources */,
 				7E6BCA9E146C37D70087A8F6 /* UIAlertView+Lazy.m in Sources */,
+				7E321FA0148E1B22001C8E2A /* SVModalWebViewController.m in Sources */,
+				7E217D6B148E282B00C7BD50 /* ITPrefViewController.m in Sources */,
+				7E856DA414919F4C00F9E912 /* ITNetworkSwitcher.m in Sources */,
+				7E856DA91491A00800F9E912 /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -884,6 +948,7 @@
 				7EF009A0146E87EC00AD1BA5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

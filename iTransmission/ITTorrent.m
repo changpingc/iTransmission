@@ -248,14 +248,20 @@ legacyIncompleteFolder: (NSString *) incompleteFolder;
 
 - (void) stopTransfer
 {
-    tr_torrentStop(self.handle);
+    [self performSelectorInBackground:@selector(_stopInBackground) withObject:nil];
     [self update];
+}
+
+- (void)_stopInBackground
+{
+    tr_torrentStop(self.handle);
+    [self performSelectorOnMainThread:@selector(update) withObject:nil waitUntilDone:NO];
 }
 
 - (void) sleep
 {
     if ((self.resumeOnWake = [self isActive]))
-        tr_torrentStop(self.handle);
+        [self performSelectorInBackground:@selector(_stopInBackground) withObject:nil];
 }
 
 - (void) wakeUp

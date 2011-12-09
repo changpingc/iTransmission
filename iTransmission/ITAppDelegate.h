@@ -11,6 +11,7 @@
 #import "ITSidebarController.h"
 #import "ITController.h"
 #import "ITTimerListener.h"
+#import "ITNetworkSwitcher.h"
 
 @interface ITAppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -20,6 +21,7 @@
 @property (strong, nonatomic) ITSidebarController *sidebarController;
 @property (nonatomic, strong) NSMutableArray *timerEventListeners;
 @property (nonatomic, strong) NSTimer *persistentTimer;
+@property (strong, nonatomic) ITNetworkSwitcher *networkSwitcher;
 
 + (id)sharedDelegate;
 - (void)startTransmission;

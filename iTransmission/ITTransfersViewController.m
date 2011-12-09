@@ -30,7 +30,7 @@
         self.title = @"Transfers";
         self.sidebarItem = [[ITSidebarItem alloc] init];
         self.sidebarItem.title = @"Transfers";
-        self.sidebarItem.icon = [UIImage imageNamed:@"transfers-icon.png"];
+//        self.sidebarItem.icon = [UIImage imageNamed:@"transfers-icon.png"];
         self.displayedTorrents = [NSMutableArray array];
         [self registerNotifications];
     }
@@ -51,18 +51,19 @@
 - (void)loadView
 {
     self.view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
-    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"texture_white_small.png"]];
-    backgroundView.contentMode = UIViewContentModeRedraw;
-    backgroundView.frame = self.view.bounds;
-    backgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin;
-    [self.view addSubview:backgroundView];
-    self.tableView.backgroundView.contentMode = UIViewContentModeRedraw;
+//    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"texture_white_small.png"]];
+//    backgroundView.contentMode = UIViewContentModeRedraw;
+//    backgroundView.frame = self.view.bounds;
+//    backgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin;
+//    [self.view addSubview:backgroundView];
+//    self.tableView.backgroundView.contentMode = UIViewContentModeRedraw;
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    self.tableView.backgroundColor = [UIColor clearColor];
+    self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"texture_white_small.png"]];
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleBottomMargin;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.backgroundColor = [UIColor clearColor];
     
     if ([self.tableView respondsToSelector:@selector(registerNib:forCellReuseIdentifier:)]) {
         [self.tableView registerNib:[UINib nibWithNibName:@"ITTransferCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:[ITTransferCell identifier]];

@@ -17,7 +17,7 @@
     if ((self = [super initWithAddress:@"http://www.google.com"])) {
         self.sidebarItem = [[ITSidebarItem alloc] init];
         self.sidebarItem.title = @"Browser";
-        self.sidebarItem.icon = [UIImage imageNamed:@"browser-icon.png"];
+//        self.sidebarItem.icon = [UIImage imageNamed:@"browser-icon.png"];
         self.navigationController.toolbarHidden = NO;
 //        self.navigationController.toolbar.barStyle = UIBarStyleBlack;
     }

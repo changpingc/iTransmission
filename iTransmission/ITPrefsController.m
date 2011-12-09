@@ -1315,4 +1315,19 @@
      */
 }
 
+- (BOOL)isRPCEnabled
+{
+    return tr_sessionIsRPCEnabled(self.handle);
+}
+
+- (BOOL)isRPCAuthorizationEnabled
+{
+    return tr_sessionIsRPCPasswordEnabled(self.handle);
+}
+
+- (BOOL)isNatTransversalEnabled
+{
+    return tr_sessionIsPortForwardingEnabled(self.handle);
+}
+
 @end

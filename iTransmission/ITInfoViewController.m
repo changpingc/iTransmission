@@ -25,7 +25,7 @@
         self.pageName = p;
         self.sidebarItem = [[ITSidebarItem alloc] init];
         self.sidebarItem.title = @"About";
-        self.sidebarItem.icon = [UIImage imageNamed:@"about-icon.png"];
+//        self.sidebarItem.icon = [UIImage imageNamed:@"about-icon.png"];
     }
     return self;
 }

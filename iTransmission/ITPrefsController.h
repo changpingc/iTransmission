@@ -75,6 +75,9 @@
 - (void)updateRPCWhitelist;
 + (NSInteger)dateToTimeSum: (NSDate *) date;
 + (NSDate *)timeSumToDate: (NSInteger) sum;
+- (BOOL)isRPCEnabled;
+- (BOOL)isRPCAuthorizationEnabled;
+- (BOOL)isNatTransversalEnabled;
 
 // Commented from MacOSX version; NOT USED! //
 /*
