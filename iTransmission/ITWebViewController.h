@@ -15,5 +15,5 @@
 @property (nonatomic, strong) ITSidebarItem *sidebarItem;
 
 - (id)init;
-
+- (void)navigateToURL:(NSURL*)url;
 @end

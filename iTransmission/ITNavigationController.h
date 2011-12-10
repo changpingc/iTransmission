@@ -16,7 +16,7 @@
 @property (assign, nonatomic) UIViewController *rootViewController;
 @property (strong, nonatomic) ITSidebarItem *sidebarItem;
 @property (strong, nonatomic) ITSidebarController *sidebarController;
-
+@property (nonatomic, assign) BOOL useDefaultTheme;
 - (UIBarButtonItem*)sidebarButtonItem;
 - (void)sidebarButtonItemClicked:(id)sender;
 

@@ -78,6 +78,8 @@
 - (BOOL)isRPCEnabled;
 - (BOOL)isRPCAuthorizationEnabled;
 - (BOOL)isNatTransversalEnabled;
+- (NSInteger)RPCPort;
+- (NSInteger)bindPort;
 
 // Commented from MacOSX version; NOT USED! //
 /*

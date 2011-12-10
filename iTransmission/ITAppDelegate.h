@@ -13,7 +13,7 @@
 #import "ITTimerListener.h"
 #import "ITNetworkSwitcher.h"
 
-@interface ITAppDelegate : UIResponder <UIApplicationDelegate>
+@interface ITAppDelegate : UIResponder <UIApplicationDelegate, UIDocumentInteractionControllerDelegate>
 
 @property (strong, nonatomic) ITController *controller;
 @property (strong, nonatomic) UIWindow *window;
@@ -22,6 +22,7 @@
 @property (nonatomic, strong) NSMutableArray *timerEventListeners;
 @property (nonatomic, strong) NSTimer *persistentTimer;
 @property (strong, nonatomic) ITNetworkSwitcher *networkSwitcher;
+@property (strong, nonatomic) UIDocumentInteractionController *interactionController;
 
 + (id)sharedDelegate;
 - (void)startTransmission;
@@ -33,5 +34,7 @@
 - (void)timerFired:(id)sender;
 - (void)registerForTimerEvent:(id<ITTimerListener>)obj;
 - (void)unregisterForTimerEvent:(id<ITTimerListener>)obj;
+
+- (void)requestToOpenURL:(NSURL*)URL;
 
 @end

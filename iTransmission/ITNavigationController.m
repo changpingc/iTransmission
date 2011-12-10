@@ -19,6 +19,7 @@
 @synthesize sidebarController = _sidebarController;
 @synthesize sidebarItem = _sidebarItem;
 @synthesize rootViewController = _rootViewController;
+@synthesize useDefaultTheme = _useDefaultTheme;
 
 - (UIBarButtonItem*)sidebarButtonItem
 {
@@ -34,13 +35,19 @@
 //        self.navigationBar.barStyle = UIBarStyleBlack;
         self.delegate = self;
         self.rootViewController = rootViewController;
-        self.navigationBar.tintColor = [UIColor barBlueColor];
-        UIImage *barBackground = [UIImage imageNamed:@"bar-bg.png"];
-        if ([self.navigationBar respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)]) {
-            [self.navigationBar setBackgroundImage:barBackground forBarMetrics:UIBarMetricsDefault];
-        }
+        _useDefaultTheme = NO;
     }
     return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning
@@ -71,10 +78,8 @@
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-//    if (self.sidebarController) {
-//        if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
-//            viewController.navigationItem.leftBarButtonItem = [self sidebarButtonItem];
-//    }
+    if (_useDefaultTheme == NO)
+        [self setUseDefaultTheme:NO];
 }
 
 - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
@@ -85,28 +90,20 @@
 //    }
 }
 
-#pragma mark - View lifecycle
-
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView
+- (void)setUseDefaultTheme:(BOOL)useDefaultTheme
 {
-}
-*/
-
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
-*/
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+    if (useDefaultTheme == NO) {
+        self.navigationBar.tintColor = [UIColor barBlueColor];
+        UIImage *barBackground = [UIImage imageNamed:@"bar-bg.png"];
+        if ([self.navigationBar respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)]) {
+            [self.navigationBar setBackgroundImage:barBackground forBarMetrics:UIBarMetricsDefault];
+        }
+    }
+    else {
+        self.navigationBar.tintColor = nil;
+        self.navigationBar.barStyle = UIBarStyleDefault;
+    }
+    _useDefaultTheme = useDefaultTheme;
 }
 
 @end

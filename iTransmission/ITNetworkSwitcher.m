@@ -72,6 +72,8 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChangedNotification:) name:kReachabilityChangedNotification object:nil];
         [self setEnforcedPolicy:kITDisableTorrentNetworkActivities];
         [self.reachabilityHandle performSelector:@selector(startNotifier) withObject:nil afterDelay:0.0f];
+        self.currentNetworkStatus = [self.reachabilityHandle currentReachabilityStatus];
+        [self updatePolicyForNetworkStatus:self.currentNetworkStatus];
 //        [self.reachabilityHandle startNotifier];
     }
     return self;
@@ -125,5 +127,9 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+- (BOOL)canStartTransfer
+{
+    return (self.enforcedPolicy == kITEnableTorrentNetworkActivities);
+}
 
 @end

@@ -252,7 +252,7 @@
             ITTorrent *torrent = [self.displayedTorrents objectAtIndex:indexPath.row];
             assert(torrent);
             if ([torrent isActive]) {
-                [torrent sleep];
+                [torrent performSelectorInBackground:@selector(stopTransfer) withObject:nil];
             }
             else {
                 [torrent startIfAllowed];

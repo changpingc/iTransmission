@@ -11,6 +11,7 @@
 #import "NSStringAdditions.h"
 #import "ITTrackerNode.h"
 #import "ITFileListNode.h"
+#import "ITNetworkSwitcher.h"
 #import "NSStates.h"
 
 #define ETA_IDLE_DISPLAY_SEC (2*60)
@@ -243,6 +244,7 @@ legacyIncompleteFolder: (NSString *) incompleteFolder;
 
 - (void) startTransfer
 {
+    
     [self startTransferIgnoringQueue: NO];
 }
 
@@ -1454,7 +1456,8 @@ legacyIncompleteFolder: (NSString *) incompleteFolder;
 
 - (void)startIfAllowed
 {
-    [self startTransfer];
+    if ([[ITNetworkSwitcher sharedNetworkSwitcher] canStartTransfer])
+        [self startTransfer];
 }
 
 @end

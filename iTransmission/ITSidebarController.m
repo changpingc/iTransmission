@@ -28,12 +28,14 @@
 @synthesize sidebarItems = _sidebarItems;
 @synthesize swipeRightRecognizer = _swipeRightRecognizer;
 @synthesize containerTouchRecognizer = _containerTouchRecognizer;
+@synthesize sidebarAlwaysShown = _sidebarAlwaysShown;
 
 - (id)init
 {
     self = [super init];
     if (self) {
         _state = ITSidebarHidden;
+        self.sidebarAlwaysShown = NO;
     }
     return self;
 }
@@ -214,19 +216,25 @@
 {
     [self.view setNeedsLayout];
     
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-        self.swipeLeftRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipedLeft)];
-        self.swipeLeftRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
-        self.swipeLeftRecognizer.numberOfTouchesRequired = 3;
-        [self.view addGestureRecognizer:self.swipeLeftRecognizer];
-        
-        self.swipeRightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipedRight)];
-        self.swipeRightRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
-        self.swipeRightRecognizer.numberOfTouchesRequired = 3;
-        [self.view addGestureRecognizer:self.swipeRightRecognizer];
-        
-        self.containerTouchRecognizer = [[ITTouchRecognizer alloc] initWithTarget:self action:@selector(containerViewTouched)];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        if (UIDeviceOrientationIsLandscape([[UIDevice currentDevice] orientation])) {
+            self.sidebarAlwaysShown = YES;
+        }
     }
+    else 
+        self.sidebarAlwaysShown = NO;
+    
+    self.swipeLeftRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipedLeft)];
+    self.swipeLeftRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
+    self.swipeLeftRecognizer.numberOfTouchesRequired = 3;
+    [self.view addGestureRecognizer:self.swipeLeftRecognizer];
+    
+    self.swipeRightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipedRight)];
+    self.swipeRightRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
+    self.swipeRightRecognizer.numberOfTouchesRequired = 3;
+    [self.view addGestureRecognizer:self.swipeRightRecognizer];
+    
+    self.containerTouchRecognizer = [[ITTouchRecognizer alloc] initWithTarget:self action:@selector(containerViewTouched)];
     
     if (self.currentViewController == nil) {
         self.currentViewController = [self.viewControllers objectAtIndex:0];
@@ -297,6 +305,12 @@
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        if (UIDeviceOrientationIsLandscape(toInterfaceOrientation)) 
+            [self setSidebarAlwaysShown:YES];
+        else 
+            [self setSidebarAlwaysShown:NO];
+    }
     return [self.currentViewController willAnimateRotationToInterfaceOrientation:toInterfaceOrientation duration:duration];
 }
 
@@ -306,7 +320,15 @@
 }
 - (void)swipedRight
 {
-    [self slideContainerViewToRightAnimated:YES];
+    if (self.sidebarAlwaysShown == NO)
+        [self slideContainerViewToRightAnimated:YES];
+}
+
+- (void)setSidebarAlwaysShown:(BOOL)sidebarAlwaysShown
+{
+    if (sidebarAlwaysShown) {
+        [self slideContainerViewToLeftAnimated:YES];
+    }
 }
 
 - (void)containerViewTouched

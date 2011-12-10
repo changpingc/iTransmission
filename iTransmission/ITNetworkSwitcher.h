@@ -30,4 +30,5 @@ typedef enum _ITNetworkSwitcherPolicy {
 + (id)sharedNetworkSwitcher;
 - (void)reachabilityChangedNotification:(NSNotification*)notification;
 - (void)updatePolicyForNetworkStatus:(NetworkStatus)status;
+- (BOOL)canStartTransfer;
 @end

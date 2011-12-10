@@ -15,6 +15,7 @@
 #import "ITInfoViewController.h"
 #import "ITExperimentalViewController.h"
 #import "ITPrefViewController.h"
+#import "UIAlertView+Lazy.h"
 
 @implementation ITAppDelegate
 
@@ -25,7 +26,7 @@
 @synthesize persistentTimer = _persistentTimer;
 @synthesize timerEventListeners = _timerEventListeners;
 @synthesize networkSwitcher = _networkSwitcher;
-
+@synthesize interactionController = _interactionController;
 
 + (id)sharedDelegate
 {
@@ -48,7 +49,7 @@
     
     NSMutableArray *viewControllers = [NSMutableArray array];
     [viewControllers addObject:[[ITNavigationController alloc] initWithRootViewController:[[ITTransfersViewController alloc] init]]];
-//    [viewControllers addObject:[[ITNavigationController alloc] initWithRootViewController:[[ITWebViewController alloc] init]]];
+    [viewControllers addObject:[[ITNavigationController alloc] initWithRootViewController:[[ITWebViewController alloc] init]]];
 //    [viewControllers addObject:[[ITExperimentalViewController alloc] init]];
     [viewControllers addObject:[[ITNavigationController alloc] initWithRootViewController:[[ITPrefViewController alloc] init]]];
     [viewControllers addObject:[[ITNavigationController alloc] initWithRootViewController:[[ITInfoViewController alloc] initWithPageName:@"about"]]];
@@ -61,7 +62,9 @@
     self.networkSwitcher = [[ITNetworkSwitcher alloc] init];
     
     [self performSelectorInBackground:@selector(startTransmission) withObject:nil];
-//    [self performSelector:@selector(_test) withObject:nil afterDelay:3.0f];
+#ifdef __EVIL_DEVEL
+    [self performSelector:@selector(_test) withObject:nil afterDelay:1.0f];
+#endif
     [self.window makeKeyAndVisible];
     
     return YES;
@@ -154,6 +157,37 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     self.networkSwitcher = nil;
+}
+
+- (void)requestToOpenURL:(NSURL*)URL
+{
+    if ([URL isFileURL]) {
+        self.interactionController = [UIDocumentInteractionController interactionControllerWithURL:URL];
+        self.interactionController.delegate = self;
+        
+        if ([self.interactionController presentOpenInMenuFromRect:self.window.bounds inView:self.window animated:YES] == NO) {
+            [UIAlertView showMessageWithDismissButton:[NSString stringWithFormat:@"No application can open \"%@\"!\n", [URL absoluteURL]]];
+            self.interactionController = nil;
+        }
+    }
+    else {
+        if ([[UIApplication sharedApplication] canOpenURL:URL]) {
+            [[UIApplication sharedApplication] openURL:URL];
+        }
+        else {
+            [UIAlertView showMessageWithDismissButton:[NSString stringWithFormat:@"No application can open \"%@\"!\n", [URL absoluteURL]]];
+        }
+    }
+}
+
+- (void)documentInteractionController:(UIDocumentInteractionController *)controller didEndSendingToApplication:(NSString *)application
+{
+    self.interactionController = nil;
+}
+
+- (void)documentInteractionControllerDidDismissOpenInMenu:(UIDocumentInteractionController *)controller
+{
+    self.interactionController = nil;
 }
 
 @end

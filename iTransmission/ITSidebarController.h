@@ -32,6 +32,7 @@ typedef enum _ITSidebarControllerState
 @property (strong, nonatomic) UISwipeGestureRecognizer *swipeLeftRecognizer;
 @property (strong, nonatomic) UISwipeGestureRecognizer *swipeRightRecognizer;
 @property (strong, nonatomic) UIGestureRecognizer *containerTouchRecognizer;
+@property (nonatomic, assign) BOOL sidebarAlwaysShown;
 
 - (void)fillContentView;
 - (void)slideContainerViewToRightAnimated:(BOOL)animated;

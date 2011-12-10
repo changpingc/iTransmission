@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ITKeyboardController.h"
 
-@interface ITPrefViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
+@interface ITPrefViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, ITKeyboardControllerDelegate>
 
+@property (nonatomic, strong) ITKeyboardController *keyboardController;
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) IBOutlet UITableViewCell *enableRPCCell;
 @property (nonatomic, strong) IBOutlet UITableViewCell *enableRPCAuthenticationCell;
@@ -20,12 +22,15 @@
 @property (nonatomic, strong) IBOutlet UITableViewCell *RPCUsernameCell;
 @property (nonatomic, strong) IBOutlet UITableViewCell *RPCPasswordCell;
 @property (nonatomic, strong) IBOutlet UITableViewCell *bindPortCell;
+@property (nonatomic, strong) IBOutlet UITableViewCell *openWebInterfaceCell;
 @property (nonatomic, strong) IBOutlet UISwitch *enableRPCSwitch;
 @property (nonatomic, strong) IBOutlet UISwitch *enableRPCAuthenticationSwitch;
 @property (nonatomic, strong) IBOutlet UISwitch *useWiFiSwitch;
 @property (nonatomic, strong) IBOutlet UISwitch *useMobileSwitch;
 @property (nonatomic, strong) IBOutlet UISwitch *enablePortMapSwitch;
-
+@property (nonatomic, strong) IBOutlet UITextField *RPCPortTextField;
+@property (nonatomic, strong) IBOutlet UITextField *bindPortTextField;
+@property (nonatomic, strong) IBOutlet UITextView *webInterfaceURLTextView;
 - (void)registerNotifications;
 
 - (IBAction)enableRPCValueChanged:(id)sender;

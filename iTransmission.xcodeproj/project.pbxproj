@@ -107,6 +107,8 @@
 		7E98A44B146A4F6D006ADF77 /* ITActivityInspectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E98A44A146A4F6D006ADF77 /* ITActivityInspectorViewController.m */; };
 		7E98A44E146A4F91006ADF77 /* ITFilesInspectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E98A44D146A4F90006ADF77 /* ITFilesInspectorViewController.m */; };
 		7E98A451146A4FA3006ADF77 /* ITPeersInspectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E98A450146A4FA3006ADF77 /* ITPeersInspectorViewController.m */; };
+		7EC0F6E21492E4F300C02C73 /* ITKeyboardController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EC0F6E01492E4F200C02C73 /* ITKeyboardController.h */; };
+		7EC0F6E31492E4F300C02C73 /* ITKeyboardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC0F6E11492E4F200C02C73 /* ITKeyboardController.m */; };
 		7EF00987146E634300AD1BA5 /* Icon-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EF00981146E634200AD1BA5 /* Icon-iPad.png */; };
 		7EF00988146E634300AD1BA5 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EF00982146E634200AD1BA5 /* Icon-Small-50.png */; };
 		7EF00989146E634300AD1BA5 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EF00983146E634200AD1BA5 /* Icon-Small.png */; };
@@ -280,6 +282,8 @@
 		7E98A44D146A4F90006ADF77 /* ITFilesInspectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITFilesInspectorViewController.m; sourceTree = "<group>"; };
 		7E98A44F146A4FA3006ADF77 /* ITPeersInspectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITPeersInspectorViewController.h; sourceTree = "<group>"; };
 		7E98A450146A4FA3006ADF77 /* ITPeersInspectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITPeersInspectorViewController.m; sourceTree = "<group>"; };
+		7EC0F6E01492E4F200C02C73 /* ITKeyboardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITKeyboardController.h; sourceTree = "<group>"; };
+		7EC0F6E11492E4F200C02C73 /* ITKeyboardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITKeyboardController.m; sourceTree = "<group>"; };
 		7EEA898A146C121A006EF611 /* ITTimerListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITTimerListener.h; sourceTree = "<group>"; };
 		7EF00981146E634200AD1BA5 /* Icon-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-iPad.png"; sourceTree = "<group>"; };
 		7EF00982146E634200AD1BA5 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
@@ -524,6 +528,8 @@
 				7E217D69148E282A00C7BD50 /* ITPrefViewController.m */,
 				7EF00986146E634200AD1BA5 /* Icon@2x.png */,
 				7E217D66148E27EF00C7BD50 /* ITPrefViewController.xib */,
+				7EC0F6E01492E4F200C02C73 /* ITKeyboardController.h */,
+				7EC0F6E11492E4F200C02C73 /* ITKeyboardController.m */,
 			);
 			path = iTransmission;
 			sourceTree = "<group>";
@@ -608,6 +614,7 @@
 				7E217D6A148E282B00C7BD50 /* ITPrefViewController.h in Headers */,
 				7E856DA314919F4C00F9E912 /* ITNetworkSwitcher.h in Headers */,
 				7E856DA81491A00800F9E912 /* Reachability.h in Headers */,
+				7EC0F6E21492E4F300C02C73 /* ITKeyboardController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -782,6 +789,7 @@
 				7E217D6B148E282B00C7BD50 /* ITPrefViewController.m in Sources */,
 				7E856DA414919F4C00F9E912 /* ITNetworkSwitcher.m in Sources */,
 				7E856DA91491A00800F9E912 /* Reachability.m in Sources */,
+				7EC0F6E31492E4F300C02C73 /* ITKeyboardController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

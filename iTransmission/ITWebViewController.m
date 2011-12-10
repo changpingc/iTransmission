@@ -8,6 +8,7 @@
 
 #import "ITWebViewController.h"
 #import "ITSidebarItem.h"
+#import "ITNavigationController.h"
 
 @implementation ITWebViewController
 @synthesize sidebarItem = _sidebarItem;
@@ -24,6 +25,16 @@
     return self;
 }
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    if ([self.navigationController respondsToSelector:@selector(setUseDefaultTheme:)])
+        [(ITNavigationController*)self.navigationController setUseDefaultTheme:YES];
+//    [[self.navigationController navigationBar] setBarStyle:UIBarStyleDefault];
+//    [[self.navigationController navigationBar] setTintColor:nil];
+//    if ([[self.navigationController navigationBar] respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)])
+//        [[self.navigationController navigationBar] setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+}
 
 - (void)didReceiveMemoryWarning
 {

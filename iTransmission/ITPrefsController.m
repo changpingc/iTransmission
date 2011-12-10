@@ -1330,4 +1330,14 @@
     return tr_sessionIsPortForwardingEnabled(self.handle);
 }
 
+- (NSInteger)RPCPort
+{
+    return tr_sessionGetRPCPort(self.handle);
+}
+
+- (NSInteger)bindPort
+{
+    return tr_sessionGetPeerPort(self.handle);
+}
+
 @end
